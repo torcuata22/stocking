@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # This route no longer exists: get 'home/index'
   root 'home#index'
   get 'home/about'

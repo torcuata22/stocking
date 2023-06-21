@@ -37,7 +37,8 @@ gem 'jquery-rails'
 #Stock quote:
 gem 'stock_quote', '~> 3.0'
 
-
+#Devise
+gem 'devise', '~> 4.9', '>= 4.9.2'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
