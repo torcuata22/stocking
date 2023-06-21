@@ -8,17 +8,20 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+  
+
   </head>
 
   <body>
     <%= render 'home/navbar' %>
     <div class="container">
-     <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
+    <%= render 'home/flash' %>
     <br>
     <%= yield %>
     </div>
     
      <%= render 'home/footer' %>
+
+    
   </body>
 </html>
