@@ -1,5 +1,25 @@
 <h1>Stocky</h1>
 <p>A friendly and easy-to-use app to keep track of your stock portfolio</p>
 
-<%= @stock.company_name %> <br>
-<%= @stock.latest_price %>
+<%= form_tag root_path :method => 'POST' do %>
+    <%= text_field_tag 'ticker', nil, placeholder: "Enter ticker symbol", data: {turbo:"false"}  %>
+    <%= submit_tag 'Lookup', data: {turbo:"false"}  %>
+<% end %>
+
+<br>
+<% if @error %>
+  <%= @error %>
+<% elsif @stock %>
+    <%= @stock.symbol %> <br>
+    <%= @stock.company_name %> <br>
+    Latest Price: $<%= @stock.latest_price %> <br>
+    Previous Close: $<%= @stock.previous_close %> <br>
+    Primary Exchange: <%= @stock.primary_exchange%>
+
+<% elsif @nothing %>
+    <%= @nothing %>
+
+<% end %>
+
+
+
